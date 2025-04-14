@@ -1610,6 +1610,7 @@ class Tag(Model):
     id: int
     name: str
     description: str
+    ruleset_id: Optional[int]
 
 
 class Tags(Model):
