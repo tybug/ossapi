@@ -2674,24 +2674,24 @@ class OssapiAsync:
 
     @request(Scope.PUBLIC, category="scores")
     async def scores(
-        self, mode: Optional[GameModeT] = None, *, cursor_string: Optional[str] = None
+        self, ruleset: Optional[GameModeT] = None, *, cursor_string: Optional[str] = None
     ) -> Scores:
         """
         Returns most recent 1000 passed scores across all users.
 
         Parameters
         ----------
-        mode
-            The mode to get scores for.
+        ruleset
+            The ruleset (gamemode) to get scores for.
         cursor_string
             Cursor for pagination.
 
         Notes
         -----
         Implements the `Get Scores
-        <https://osu.ppy.sh/docs/index.html#get-scores94>`__ endpoint.
+        <https://osu.ppy.sh/docs/index.html#get-scores97>`__ endpoint.
         """
-        params = {"mode": mode, "cursor_string": cursor_string}
+        params = {"ruleset": ruleset, "cursor_string": cursor_string}
         return await self._get(Scores, "/scores", params)
 
     @request(Scope.PUBLIC, category="scores")
