@@ -2590,7 +2590,7 @@ class OssapiAsync:
         """
         return await self._get(Room, f"/rooms/{room_id}")
 
-    @request(Scope.PUBLIC, requires_user=True, category="rooms")
+    @request(Scope.PUBLIC, category="rooms")
     async def room_leaderboard(self, room_id: RoomIdT) -> RoomLeaderboard:
         """
         Get the leaderboard of a room.

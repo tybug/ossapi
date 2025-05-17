@@ -2496,7 +2496,7 @@ class Ossapi:
         """
         return self._get(Room, f"/rooms/{room_id}")
 
-    @request(Scope.PUBLIC, requires_user=True, category="rooms")
+    @request(Scope.PUBLIC, category="rooms")
     def room_leaderboard(
         self, room_id: RoomIdT, limit: Optional[int] = None, page: Optional[int] = None
     ) -> RoomLeaderboard:
