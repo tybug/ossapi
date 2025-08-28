@@ -1,0 +1,29 @@
+<!-- adapted from https://gist.github.com/domenic/1f286d415559b56d725bee51a62c24a7?permalink_comment_id=3945701#gistcomment-3945701 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Page not found</title>
+
+    <script>
+        window.onload = function () {
+            const destination = window.location.href;
+            if (window.location.href.includes("circleguard.github.io/ossapi")) {
+                const redirectLocation = window.location.href.replace(
+                    "tybug.github.io/ossapi",
+                    "liam-devoe.github.io/ossapi"
+                );
+                document.getElementById("body").innerHTML = "ossapi has moved from the tybug.github.io to liam-devoe.github.io. <br/><br/>Redirecting to " + redirectLocation + " ...";
+                window.location.href = redirectLocation;
+            }
+        }
+    </script>
+</head>
+
+<body id="body" style="text-align: center">
+    Page not found
+</body>
+
+</html>
